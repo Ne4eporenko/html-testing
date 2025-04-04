@@ -55,6 +55,7 @@ p {
     color: white;
     font-weight: bold;
     margin: auto;
+    position: relative;
 }
 
 .header__logo {
@@ -85,6 +86,7 @@ p {
     background-repeat: no-repeat;
     background-position: center;
     margin-left: 10px;
+    background-size: contain;
 }
 
 .header__premium {
@@ -112,6 +114,48 @@ p {
     text-decoration: underline;
 }
 
+/* burger block */
+.burger-header {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+
+
+}
+
+.burger-header .nav {
+    background-color: rgb(149 100 170);
+    position: relative;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+}
+
+.burger-header .nav__item a {
+    color: white;
+}
+
+.burger-header__menu {
+    width: 40px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.burger-header__menu span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.burger-header__burger:hover span {
+    background-color: var(--yellow);
+}
 
 /* block nav */
 .nav {
@@ -313,16 +357,20 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-.offer__item:hover{
+
+.offer__item:hover {
     background-color: var(--purple);
 }
-.offer__item:hover p{
+
+.offer__item:hover p {
     color: white;
 }
-.offer__item:hover .offer__button{
+
+.offer__item:hover .offer__button {
     background-color: var(--yellow);
     color: black;
 }
+
 .offer__price {
     display: flex;
     align-items: center;
@@ -345,7 +393,8 @@ h1 {
     align-items: center;
     margin-left: 5px;
 }
-.offer__button{
+
+.offer__button {
     width: 120px;
     height: 52px;
     border-radius: 5px;
@@ -357,12 +406,14 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: 11px;
-    
+
 }
-.special-offer{
+
+.special-offer {
     position: relative;
 }
-.special-offer__block{
+
+.special-offer__block {
     position: absolute;
     font-size: 14px;
     font-weight: bold;
@@ -376,7 +427,8 @@ h1 {
     top: -10px;
     right: 14.5px;
 }
-.offer__item_down{
+
+.offer__item_down {
     width: 100%;
     height: 74px;
     border-radius: 10px;
@@ -387,25 +439,245 @@ h1 {
     align-items: center;
     margin-top: 12px;
 }
-.offer__item_down .offer__price{
+
+.offer__item_down .offer__price {
     flex-direction: row;
 }
-.offer__item_down .offer__button{
+
+.offer__item_down .offer__button {
     margin-left: 41px;
 }
-.offer__item_down:hover{
+
+.offer__item_down:hover {
     background-color: var(--brown);
 }
-.offer__item_down:hover p{
+
+.offer__item_down:hover p {
     color: white;
 }
-.offer__item_down:hover .offer__button{
+
+.offer__item_down:hover .offer__button {
     background-color: var(--yellow);
     color: black;
 }
-.privacy-policy{
+
+.privacy-policy {
     font-size: 13px;
 }
-.privacy-policy a{
+
+.privacy-policy a {
     color: var(--purple);
 }
+
+.privacy-policy label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Отключаем стандартный стиль чекбокса */
+.checkbox-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: none;
+    /* для поддержки в Safari */
+}
+
+/* Стилизация чекбокса */
+.checkbox-input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--purple);
+    border-radius: 0.25rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-right: 10px;
+}
+
+/* Оформление состояния checked */
+.checkbox-input:checked {
+    margin-right: 10px;
+    background-color: var(--purple);
+    border-color: var(--purple);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.advantages {
+    width: 100%;
+    margin-top: 33px;
+}
+
+.advantages-block {
+    position: relative;
+    width: 100%;
+    max-width: 349px;
+    margin: auto;
+}
+
+.advantages__diamand-img {
+    width: 349px;
+    height: 312px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.advantages__item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 108px;
+    height: 96px;
+}
+
+.advantages__item p {
+    font-size: 12px;
+    color: var(--purple);
+    font-weight: bold;
+    text-align: center;
+}
+
+.advantages__item-img {
+    background-color: rgba(149, 100, 170, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.item1 {
+    top: 0;
+    left: 20%;
+}
+
+.item2 {
+    top: 0;
+    left: 55%;
+}
+
+.item3 {
+    right: 0px;
+    top: 35%;
+}
+
+.item4 {
+    bottom: 0;
+    left: 20%;
+}
+
+.item5 {
+    bottom: 0;
+    left: 55%;
+}
+
+.item6 {
+    left: 0px;
+    top: 35%;
+}
+
+/* media block */
+
+@media (max-width:1100px) {
+    .content {
+        width: 98%;
+    }
+
+    .header-block {
+        width: 98%;
+    }
+
+    .offer__item {
+        margin: 10px;
+    }
+
+    .offer {
+        justify-content: center;
+    }
+}
+
+@media (max-width:1050px) {
+
+    .discount h2 {
+        font-size: 30px;
+        margin: 0px;
+    }
+}
+
+@media (max-width:960px) {
+    .discount {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .discount p {
+        margin: 10px 0px;
+    }
+}
+
+@media (max-width:750px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .header__nav a {
+        display: none;
+    }
+
+    .header__nav {
+        justify-content: end;
+        width: 100%;
+
+    }
+
+    .header__premium {
+        background-color: transparent;
+    }
+
+    .header__premium span:nth-child(1) {
+        display: none;
+    }
+
+    .header-diamand {
+        background-image: url("../images/diamand.svg");
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-size: 80%;
+    }
+
+    .header__premium:hover .header-diamand {
+        background-image: url("../images/diamand_hover.svg");
+        background-color: #FFCF2D;
+    }
+
+    .header__premium:hover {
+        background-color: transparent;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .header__logo {
+        display: none;
+    }
+
+    .burger-header {
+        display: block;
+    }
+
+    .burger-header .nav {
+        display: flex;
+    }
+}
+
+@media (max-width:320px) {}
