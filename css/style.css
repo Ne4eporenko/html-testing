@@ -17,6 +17,7 @@ body {
     min-width: 320px;
     font-family: "Ubuntu", sans-serif;
     position: relative;
+    overflow-x: hidden;
 
 }
 
@@ -137,6 +138,7 @@ p {
     left: -10px;
     padding-left: 50px;
     transition: all .4s ease-in-out;
+    display: block;
 }
 
 .header-block.open .burger-header {
@@ -156,6 +158,7 @@ p {
     width: 100%;
     height: 100%;
     padding-top: 50px;
+    display: none;
 }
 
 .burger-header .nav__item a {
@@ -297,7 +300,54 @@ p {
     margin: auto;
     margin-top: 30px;
     max-width: 1170px;
+    position: relative;
 }
+
+.balls-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.balls-bg__item {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.balls-bg__item img {
+    position: absolute;
+}
+.balls-bg__item img:nth-child(1) {
+    top: 80px;
+    left: 80px;
+    height: 250px;
+    width: 250px;
+}
+
+.balls-bg__item img:nth-child(2) {
+    bottom: 80px;
+    right: 80px;
+    height: 250px;
+    width: 250px;
+}
+/* .balls {
+    position: absolute;
+}
+
+.balls_left {
+    left: -30%;
+}
+
+.balls_right {
+    right: -50%;
+} */
 
 h1 {
     font-size: 40px;
@@ -419,6 +469,7 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-left: 5px;
+    color: black !important;
 }
 
 .offer__button {
@@ -443,6 +494,7 @@ h1 {
 .special-offer__block {
     position: absolute;
     font-size: 14px;
+    color: black !important;
     font-weight: bold;
     width: 123px;
     height: 23px;
@@ -488,8 +540,39 @@ h1 {
     color: black;
 }
 
+/* block offer-wrap */
+.offer-slider_mob {
+    margin-top: 23px;
+    display: none;
+}
+
+.slider__item {
+    width: 260px;
+    height: 59px;
+    background-color: var(--purple);
+    color: white;
+    position: relative;
+}
+
 .privacy-policy {
     font-size: 13px;
+}
+
+.slick-slide {
+    width: 100%;
+    margin: 0 50px;
+    border-radius: 10px;
+}
+
+.offer__price.slider_mob {
+    height: 100%;
+}
+
+.slider_mob p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .privacy-policy a {
@@ -500,6 +583,37 @@ h1 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.slider__item .special-offer__block {
+    top: 35%;
+    right: 70%;
+    position: absolute;
+}
+
+.button_mob {
+    width: 100%;
+    margin: auto;
+    display: none;
+    margin-top: 49px;
+    margin-bottom: 15px;
+}
+
+.button_mob a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 55px;
+    border-radius: 10px;
+    background-color: var(--yellow);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button_mob a:hover {
+    background-color: #f2d881;
 }
 
 /* Отключаем стандартный стиль чекбокса */
@@ -623,6 +737,7 @@ h1 {
 
     .offer__item {
         margin: 10px;
+        flex-grow: 1;
     }
 
     .offer {
@@ -653,6 +768,10 @@ h1 {
 @media (max-width:750px) {
     h1 {
         font-size: 30px;
+    }
+
+    .main {
+        margin-left: 0px;
     }
 
     .header__nav a {
@@ -704,9 +823,89 @@ h1 {
         display: block;
     }
 
-    .burger-header .nav {
-        display: flex;
-    }
+
 }
 
-@media (max-width:320px) {}
+@media (max-width:600px) {
+    .burger-header__menu {
+        margin-left: 20px;
+    }
+
+    .discount {
+        display: none;
+    }
+
+    .offer {
+        display: none;
+    }
+
+    .offer-slider_mob {
+        display: block;
+    }
+
+    .button_mob {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .advantages-block {
+        margin: 0px;
+        max-width: 100%;
+    }
+
+    .advantages__item-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .advantages__item-img img {
+        width: 15px;
+    }
+
+    .advantages__diamand-img {
+        width: 81px;
+        height: 67px;
+        margin-bottom: 13px;
+    }
+
+    .advantages__diamand-img img {
+        width: 100%;
+    }
+
+    .advantages__item {
+        position: relative;
+        flex-direction: row;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .item1,
+    .item2,
+    .item4,
+    .item5 {
+        left: 0;
+    }
+
+    .item3,
+    .item6 {
+        top: 0;
+    }
+
+    .header__nav {
+
+        width: 95%;
+    }
+
+
+}
+
+
+@media (max-width:400px) {
+    .slider__item .special-offer__block {
+        width: 80px;
+        font-size: 8px;
+        right: 80%;
+    }
+}

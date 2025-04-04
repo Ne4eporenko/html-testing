@@ -137,6 +137,14 @@
     </header>
     <main>
         <div class="content">
+            <div class="balls-bg">
+                <div class="balls-bg__item">
+                    <!-- <div class="balls balls_left"><img src="./images/balls-left.png" class="mouse" value="5"></div>
+                    <div class="balls balls_right"><img src="./images/balls-right.png" class="mouse" value="-5"></div> -->
+                   <img src="./images/balls-left.png" class="mouse" value="5">
+                   <img src="./images/balls-right.png" class="mouse" value="-5">
+                </div>
+            </div>
             <nav class="nav">
                 <div class="profile">
                     <img src="./images/profile-img.png">
@@ -291,6 +299,42 @@
                         <a href="#" class="offer__button">Buy now</a>
                     </div>
                 </div>
+                <div class="offer-slider_mob">
+                    <div class="slider__item special-offer">
+                        <div class="special-offer__block">One time offer!</div>
+                        <div class="offer__price slider_mob">
+                            <p>50<span>CR</span> / 5$</p>
+                        </div>
+                    </div>
+                    <div class="slider__item">
+                        <div class="offer__price slider_mob">
+                            <p>150<span>CR</span></p>
+                        </div>
+                    </div>
+                    <div class="slider__item">
+                        <div class="offer__price slider_mob">
+                            <p>300<span>CR</span></p>
+                        </div>
+                    </div>
+                    <div class="slider__item">
+                        <div class="offer__price slider_mob">
+                            <p>500<span>CR</span></p>
+                        </div>
+                    </div>
+                    <div class="slider__item">
+                        <div class="offer__price slider_mob">
+                            <p>1000<span>CR</span></p>
+                        </div>
+                    </div>
+                    <div class="slider__item">
+                        <div class="offer__price slider_mob">
+                            <p>1000<span>CR</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="button_mob">
+                    <a href="#">Try now</a>
+                </div>
                 <div class="privacy-policy">
                     <label>
                         <input type="checkbox" name="accept" class="checkbox-input" checked
@@ -339,46 +383,31 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <script>
 
-        $(document).on('resize, ready', function () {
-            // Add class if screen size equals
-            var $window = $(window),
-                $html = $('.offer');
-            function resize() {
-                $html.removeClass('xs sm md lg');
-                if ($window.width() < 750) {
-                    return $html.addClass('slides__section');
-                }
-                if ($window.width() > 750) {
-                    return $html.removeClass('slides__section');
-                }
-                // else if ($window.width() > 768 && $window.width() < 992) {
-                //     return $html.addClass('sm');
-                // }
-                // else if ($window.width() > 992 && $window.width() < 1200) {
-                //     return $html.addClass('md');
-                // }
-                // else if ($window.width() > 1200) {
-                //     return $html.addClass('lg');
-                // }
-            }
-            $window.resize(resize).trigger('resize');
-        });
-
-
-    </script>
-    <script>
-
-        $('.slides__section').slick({
+        $('.offer-slider_mob').slick({
             infinite: true,
             slidesToShow: 1,
-            autoplay: true,
+            // autoplay: true,
             autoplaySpeed: 2000,
             dots: true,
             slidesToScroll: 1,
         });
     </script>
+    <script type="text/javascript">
+        document.addEventListener("balls-bg__item", parallax);
+        function parallax(event) {
+            this.querySelectorAll(".mouse").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 90;
+                const y = (window.innerHeight - event.pageY * position) / 90;
+
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        }
+    </script>
+
 </body>
 
 </html>
