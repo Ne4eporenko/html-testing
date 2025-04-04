@@ -15,9 +15,9 @@
     <script defer src="./js/burger.js"></script>
     <script defer src="./js/timer.js"></script>
     <script defer src="./js/nav-color.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
@@ -26,7 +26,7 @@
     <header>
         <section class="header-block">
             <div class="burger-header">
-                <div class="burger-header__menu">
+                <div class="burger-header__menu" id="burger_btn">
                     <span></span><span></span><span></span>
                 </div>
                 <nav class="nav">
@@ -336,6 +336,49 @@
     <footer>
 
     </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+
+        $(document).on('resize, ready', function () {
+            // Add class if screen size equals
+            var $window = $(window),
+                $html = $('.offer');
+            function resize() {
+                $html.removeClass('xs sm md lg');
+                if ($window.width() < 750) {
+                    return $html.addClass('slides__section');
+                }
+                if ($window.width() > 750) {
+                    return $html.removeClass('slides__section');
+                }
+                // else if ($window.width() > 768 && $window.width() < 992) {
+                //     return $html.addClass('sm');
+                // }
+                // else if ($window.width() > 992 && $window.width() < 1200) {
+                //     return $html.addClass('md');
+                // }
+                // else if ($window.width() > 1200) {
+                //     return $html.addClass('lg');
+                // }
+            }
+            $window.resize(resize).trigger('resize');
+        });
+
+
+    </script>
+    <script>
+
+        $('.slides__section').slick({
+            infinite: true,
+            slidesToShow: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            slidesToScroll: 1,
+        });
+    </script>
 </body>
 
 </html>

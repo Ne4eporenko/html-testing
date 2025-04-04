@@ -16,7 +16,13 @@ body {
     margin: auto;
     min-width: 320px;
     font-family: "Ubuntu", sans-serif;
+    position: relative;
 
+}
+
+body.no_scroll {
+    overflow: hidden;
+    touch-action: none;
 }
 
 header {
@@ -55,7 +61,7 @@ p {
     color: white;
     font-weight: bold;
     margin: auto;
-    position: relative;
+
 }
 
 .header__logo {
@@ -120,16 +126,36 @@ p {
     position: absolute;
     z-index: 10;
     top: 0px;
-
+    /* width: 100%;
+    height: 100%; */
+    left: 0;
 
 }
 
-.burger-header .nav {
+
+.header-block.open .burger-header .nav {
+    left: -10px;
+    padding-left: 50px;
+    transition: all .4s ease-in-out;
+}
+
+.header-block.open .burger-header {
     background-color: rgb(149 100 170);
+    width: 100%;
+    height: 100%;
+}
+
+.header-block.open .nav-icon {
+    fill: white;
+}
+
+.burger-header .nav {
+    background-color: transparent;
     position: relative;
     left: -150%;
     width: 100%;
     height: 100%;
+    padding-top: 50px;
 }
 
 .burger-header .nav__item a {
@@ -144,6 +170,7 @@ p {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    margin-top: 35px;
 }
 
 .burger-header__menu span {
@@ -640,6 +667,8 @@ h1 {
 
     .header__premium {
         background-color: transparent;
+        width: 100%;
+        justify-content: end;
     }
 
     .header__premium span:nth-child(1) {
