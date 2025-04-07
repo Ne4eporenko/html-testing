@@ -321,33 +321,28 @@ p {
     justify-content: center;
     align-items: center;
 }
-.balls-bg__item img {
+
+.paralax {
+    width: 60%;
     position: absolute;
-}
-.balls-bg__item img:nth-child(1) {
-    top: 80px;
-    left: 80px;
-    height: 250px;
-    width: 250px;
+
 }
 
-.balls-bg__item img:nth-child(2) {
-    bottom: 80px;
-    right: 80px;
-    height: 250px;
-    width: 250px;
-}
-/* .balls {
-    position: absolute;
+.paralax img {
+    width: 100%;
 }
 
-.balls_left {
-    left: -30%;
+.paralax:nth-child(1) {
+    top: 100px;
+    left: calc(45% - 850px);
 }
 
-.balls_right {
-    right: -50%;
-} */
+.paralax:nth-child(2) {
+    top: 100px;
+    right: calc(25% - 850px);
+}
+
+
 
 h1 {
     font-size: 40px;
@@ -616,16 +611,13 @@ h1 {
     background-color: #f2d881;
 }
 
-/* Отключаем стандартный стиль чекбокса */
 .checkbox-input {
     appearance: none;
     -webkit-appearance: none;
     -o-appearance: none;
     -moz-appearance: none;
-    /* для поддержки в Safari */
 }
 
-/* Стилизация чекбокса */
 .checkbox-input {
     appearance: none;
     width: 20px;
@@ -638,7 +630,7 @@ h1 {
     margin-right: 10px;
 }
 
-/* Оформление состояния checked */
+/*  checked */
 .checkbox-input:checked {
     margin-right: 10px;
     background-color: var(--purple);
@@ -692,6 +684,15 @@ h1 {
     align-items: center;
     justify-content: center;
     border-radius: 100%;
+    cursor: pointer;
+}
+
+.advantages__item-img svg {
+    fill: var(--purple);
+}
+
+.advantages__item-img:hover svg {
+    fill: var(--yellow);
 }
 
 .item1 {
@@ -725,6 +726,15 @@ h1 {
 }
 
 /* media block */
+@media (max-width:1250px) {
+    .paralax:nth-child(1) {
+        left: calc(45% - 740px);
+    }
+
+    .paralax:nth-child(2) {
+        right: calc(25% - 725px);
+    }
+}
 
 @media (max-width:1100px) {
     .content {
@@ -742,6 +752,13 @@ h1 {
 
     .offer {
         justify-content: center;
+    }
+    .paralax:nth-child(1) {
+        left: calc(45% - 700px);
+    }
+
+    .paralax:nth-child(2) {
+        right: calc(25% - 675px);
     }
 }
 
@@ -762,6 +779,9 @@ h1 {
 
     .discount p {
         margin: 10px 0px;
+    }
+    .balls-bg{
+        display: none;
     }
 }
 
